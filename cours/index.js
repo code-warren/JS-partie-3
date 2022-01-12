@@ -97,8 +97,10 @@ document.body.addEventListener("click", (e) => {
   }
 });
 
+//---------------
 //Méthodes String
-let string2 = "javascript est un langage orienté objet";
+//---------------
+let string2 = "Javascript est un langage orienté objet";
 
 // console.log(typeof "42");
 // console.log(eval(parseInt("1") + 2));
@@ -110,7 +112,101 @@ let string2 = "javascript est un langage orienté objet";
 // console.log(string2.indexOf("langage"));
 // console.log(string2.indexOf("x")); // Retourne -1 s'il ne le connait pas
 
-let newString = string2.slice(20);
-// let newString = string2.slice(5, 17);
+// let newString = string2.slice(20);
+// // let newString = string2.slice(5, 17);
+// console.log(newString);
 
-console.log(newString);
+// console.log(string2.split(" "));
+
+// console.log(string2.toLocaleLowerCase());
+// console.log(string2.toUpperCase());
+
+// console.log(string2.replace("Javascript", "PHP"));
+
+//---------------
+// Méthodes numbers
+//---------------
+
+let number2 = 42.1234;
+let numberString = "42.12 est un chiffre";
+
+// console.log(number2.toFixed(1));
+// console.log(parseInt("43"));
+// console.log(parseInt(numberString));
+// console.log(parseFloat(numberString));
+
+// Math
+// console.log(Math.PI);
+// console.log(Math.round(4.5));
+// console.log(Math.floor(4.9));
+// console.log(Math.ceil(4.1));
+// console.log(Math.pow(2, 7));
+// console.log(Math.sqrt(16));
+
+// console.log(Math.floor(Math.random() * 50));
+
+//----------------
+// Méthodes Arrays
+//----------------
+
+let array3 = ["Javascript", "Php", "Python"];
+let array4 = ["Ruby", "Solidity"];
+
+// let newArray = array3.concat(array4);
+// console.log(newArray);
+
+// let newArray = [...array3, ...array4];
+// console.log(newArray);
+
+// console.log(array3.join(" "));
+
+// console.log(array3.slice(1));
+// console.log(newArray.slice(2, 5));
+
+// console.log(array3.indexOf("Python"));
+
+// array3.forEach((languages) => console.log(languages));
+
+// console.log(array3.every((language) => language === "Php"));
+// console.log(array3.some((language) => language === "Php"));
+
+// let shift = array3.shift();
+// console.log(array3);
+
+// console.log(array3.pop());
+
+// const restArray = array3.splice(0, 2, ...array4);
+// console.log(array3);
+
+// IMPORTANT //
+let arrayNumber = [4, 74, 28, 12, 1];
+// console.log(arrayNumber.reduce((x, y) => x + y));
+arrayNumber.push(17);
+console.log(arrayNumber);
+
+// FILTER , SORT, MAP
+// console.log(arrayNumber.filter((number) => number > 10));
+// console.log(arrayNumber.sort());
+// console.log(arrayNumber.sort((a, b) => a - b));
+
+// document.body.innerHTML = arrayNumber
+//   .map((number) => `<li> ${number}</li>`)
+//   .join("");
+
+//------------------
+//  Méthodes Objects
+//------------------
+document.body.innerHTML = data
+  .filter((user) => user.pseudo.includes("a"))
+  .sort((a, b) => b.age - a.age)
+  .map(
+    (user) =>
+      `
+    <div class="user-card">
+      <h2>${user.pseudo}</h2>
+      <p>Age : ${user.age} ans</p>
+      <p>Status ${user.admin ? "Modérateur" : "Membre"}</p>
+    </div>
+  `
+  )
+  .join("");
